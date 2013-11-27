@@ -39,9 +39,9 @@ ERROR_STATUS = {
 
 class KloutError(Exception):
     def __init__(self, code, msg):
-        super(KloutError, self).__init__()
         self.code = code
         self.msg = msg
+        super(KloutError, self).__init__(str(self))
 
     def __str__(self):
         return repr(self)
